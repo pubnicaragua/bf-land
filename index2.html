@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Nicaragua | Desarrollo de Software a Medida - Inicia tu Proyecto</title>
+  <meta name="description" content="Desarrollamos tu software o aplicación a medida en solo 90 días. Inicia tu proyecto por solo el 10% del presupuesto. Agenda una consultoría gratuita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+    /* Software Nicaragua Landing Page Styles */
+    :root {
+      --primary-blue: #1a2b5f;
+      --primary-orange: #f26430;
+      --light-blue: #2563eb;
+      --white: #ffffff;
+      --black: #000000;
+      --gray-light: #f8f9fa;
+      --gray-medium: #6c757d;
+      --gray-dark: #343a40;
+      --red: #dc3545;
+      --green-whatsapp: #25d366;
+      /* Gradients */
+      --gradient-blue: linear-gradient(135deg, #1e3a8a 0%, #1a2b5f 50%, #0f172a 100%);
+      --gradient-orange: linear-gradient(135deg, #f26430 0%, #ff7849 50%, #e05828 100%);
+      --gradient-dark: linear-gradient(135deg, #1a2b5f 0%, #0f1419 100%);
+      /* Shadows */
+      --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.15);
+      --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.3);
+      --shadow-orange: 0 10px 30px rgba(242, 100, 48, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+      color: var(--white);
+      background-color: var(--primary-blue);
+      overflow-x: hidden;
+    }
+
+    /* CONTENEDOR MÁS ANCHO */
+    .container-wide {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-blue);
+      padding: 10px 0; /* Reduced padding-top to minimize space above */
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-blue);
+      opacity: 0.95;
+    }
+
+    .hero-section .container-wide {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Reduced gap to bring elements closer */
+    }
+
+    .hero-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0; /* Removed horizontal padding to be closer to margins */
+      width: 100%;
+    }
+
+    /* LOGO REDONDO Y FLOTANTE */
+    .floating-logo {
+      margin-bottom: 40px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .logo-round {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow-heavy);
+      filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+    }
+
+    .hero-question {
+      font-size: 28px; /* Set to 28px */
+      color: var(--white);
+      margin-bottom: 30px;
+      font-weight: 500;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-size: 36px; /* Set to 36px */
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 40px;
+      color: var(--white);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      letter-spacing: -0.02em;
+      max-width: 100%;
+      word-spacing: 0.1em;
+    }
+
+    .highlight {
+      color: var(--primary-orange);
+      background: var(--gradient-orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 15px rgba(242, 100, 48, 0.6));
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-text {
+      font-size: 31px; /* Set to 31px */
+      font-weight: 600;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      max-width: 900px;
+      line-height: 1.4;
+    }
+
+    .bounce-arrow {
+      color: var(--primary-orange);
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 30px; /* Reduced padding */
+      box-shadow: var(--shadow-heavy);
+      max-width: 1100px; /* Increased max-width for the form card */
+      width: 95vw; /* Ensures it takes 95% of viewport width, up to max-width */
+      margin: 0 auto;
+    }
+
+    .form-card iframe {
+      height: 800px; /* Increased height significantly */
+    }
+
+    .form-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      width: 100%;
+      padding: 20px;
+      background: var(--gradient-orange);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-orange);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(242, 100, 48, 0.5);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 18px 45px;
+      background: var(--gradient-orange);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-orange);
+      letter-spacing: 0.5px;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(242, 100, 48, 0.5);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .center-btn {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 60px;
+      text-align: center;
+      color: var(--primary-blue);
+      letter-spacing: -0.02em;
+    }
+
+    .white-title {
+      color: var(--white) !important;
+    }
+
+    /* PAIN POINTS SECTION */
+    .pain-points-section {
+      background: var(--white);
+      color: var(--primary-blue);
+    }
+
+    .pain-points-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .pain-points-content {
+      max-width: 650px;
+    }
+
+    .pain-points-section .section-title {
+      text-align: left;
+      margin-bottom: 50px;
+      color: var(--primary-blue);
+    }
+
+    .pain-points-list {
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .pain-points-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 35px;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--primary-blue);
+      letter-spacing: 0.3px;
+    }
+
+    .red-x {
+      color: var(--red);
+      font-size: 1.5rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .pain-points-image {
+      text-align: center;
+    }
+
+    .pain-points-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: var(--shadow-heavy);
+    }
+
+    /* HELP SECTION */
+    .help-section {
+      background: var(--gradient-dark);
+    }
+
+    .help-content {
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .help-content p {
+      font-size: 1.4rem;
+      margin-bottom: 35px;
+      color: var(--white);
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+    }
+
+    /* STEPS SECTION */
+    .steps-section {
+      background: var(--primary-blue);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .step-card {
+      background: var(--white);
+      padding: 50px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow-heavy);
+      transition: transform 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .step-number {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--primary-orange);
+      background: var(--gradient-orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+
+    .step-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .step-card p {
+      color: var(--gray-dark);
+      line-height: 1.6;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* PROJECTS SECTION */
+    .projects-section {
+      background: var(--gradient-dark);
+    }
+
+    .projects-grid {
+      gap: 150px;
+      margin-bottom: 60px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-heavy);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+    }
+
+    /* TRUST SECTION */
+    .trust-section {
+      background: var(--primary-blue);
+    }
+
+    .trust-content {
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .trust-content p {
+      font-size: 1.4rem;
+      margin-bottom: 35px;
+      color: var(--white);
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+    }
+
+    /* FAQ SECTION - FIXED HOVER STATES */
+    .faq-section {
+      background: var(--gradient-dark);
+    }
+
+    .accordion {
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+
+    .accordion-item {
+      background: transparent; /* Changed from rgba(255, 255, 255, 0.1) to transparent */
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 30px 35px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-orange); /* Default color for closed header */
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
+    }
+
+    .accordion-header:hover {
+      background-color: var(--primary-orange) !important; /* Changed to orange background on hover */
+      color: var(--white) !important; /* White text on orange hover for contrast */
+    }
+
+    .accordion-header i {
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: var(--primary-orange); /* Icon color for closed header */
+      font-size: 1.3rem;
+    }
+
+    .accordion-header:hover i {
+      color: var(--white) !important; /* White icon on orange hover */
+    }
+
+    .accordion-header.active {
+      color: var(--white); /* Color for active header */
+    }
+
+    .accordion-header.active i {
+      transform: rotate(180deg);
+      color: var(--white); /* Icon color for active header */
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+      background: transparent; /* Default transparent */
+    }
+
+    .accordion-content.active {
+      max-height: 250px; /* Adjust as needed for content height */
+      padding: 0 35px 30px; /* Adjusted padding for wider text */
+      background: var(--primary-blue); /* Fondo oscuro para el contenido abierto */
+    }
+
+    .accordion-content p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--primary-blue);
+      padding: 50px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer p {
+      margin-bottom: 15px;
+      color: var(--white);
+      opacity: 0.8;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .footer a {
+      color: var(--primary-orange);
+      text-decoration: underline;
+    }
+
+    .footer a:hover {
+      color: var(--white);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .container-wide {
+        max-width: 1200px;
+        padding: 0 25px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .pain-points-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .pain-points-section .section-title {
+        text-align: center;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container-wide {
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .hero-section {
+        padding: 40px 0; /* Adjusted for mobile */
+      }
+
+      .hero-section .container-wide {
+        gap: 20px; /* Adjusted for mobile */
+      }
+
+      .logo-round {
+        width: 60px;
+        height: 60px;
+      }
+
+      .hero-question {
+        font-size: 24px; /* Adjusted for mobile */
+      }
+
+      .hero-title {
+        font-size: 32px; /* Adjusted for mobile */
+      }
+
+      .hero-cta-text {
+        font-size: 28px; /* Adjusted for mobile */
+      }
+
+      .form-card {
+        padding: 25px 20px; /* Reduced padding for smaller screens */
+        max-width: 700px; /* Adjusted for smaller screens */
+      }
+
+      .form-card iframe {
+        height: 700px; /* Adjusted for smaller screens */
+      }
+
+      .form-title {
+        font-size: 1.8rem;
+      }
+
+      .section-title {
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+        margin-bottom: 50px;
+      }
+
+      .pain-points-list li {
+        font-size: 1.2rem;
+      }
+
+      .help-content p,
+      .trust-content p {
+        font-size: 1.3rem;
+      }
+
+      .step-card {
+        padding: 40px 30px;
+      }
+
+      .step-number {
+        font-size: 4rem;
+      }
+
+      .step-card h3 {
+        font-size: 1.4rem;
+      }
+
+      .accordion-header {
+        padding: 25px 30px;
+        font-size: 1.3rem;
+      }
+
+      .accordion-content.active {
+        padding: 0 30px 25px;
+      }
+
+      .accordion-content p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container-wide {
+        padding: 0 15px;
+      }
+
+      .hero-section .container-wide {
+        gap: 15px; /* Adjusted for smallest screens */
+      }
+
+      .logo-round {
+        width: 60px;
+        height: 60px;
+      }
+
+      .hero-question {
+        font-size: 20px; /* Adjusted for smallest screens */
+      }
+
+      .hero-title {
+        font-size: 28px; /* Adjusted for smallest screens */
+      }
+
+      .hero-cta-text {
+        font-size: 24px; /* Adjusted for smallest screens */
+      }
+
+      .form-card {
+        padding: 20px 15px; /* Reduced padding for smallest screens */
+        max-width: 500px; /* Adjusted for smallest screens */
+      }
+
+      .form-card iframe {
+        height: 600px; /* Adjusted for smallest screens */
+      }
+
+      .form-title {
+        font-size: 1.6rem;
+      }
+
+      .btn-primary {
+        padding: 18px;
+        font-size: 1.2rem;
+      }
+
+      .btn-secondary {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+      }
+
+      .pain-points-list li {
+        font-size: 1.1rem;
+      }
+
+      .step-card {
+        padding: 35px 25px;
+      }
+
+      .step-number {
+        font-size: 3.5rem;
+      }
+
+      .accordion-header {
+        padding: 22px 25px;
+        font-size: 1.2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ACCESSIBILITY */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* FOCUS STYLES */
+    button:focus,
+    input:focus,
+    a:focus {
+      outline: 3px solid rgba(242, 100, 48, 0.5);
+      outline-offset: 2px;
+    }
+  </style>
+  <!-- Microsoft Clarity Code -->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "rvub98i5sa");
+  </script>
+  <!-- End Microsoft Clarity Code -->
+</head>
+<body>
+  <!-- HERO SECTION WITH FORM -->
+  <section class="hero-section">
+      <div class="hero-background">
+          <div class="hero-overlay"></div>
+      </div>
+      <div class="container-wide">
+          <div class="hero-content">
+              <div class="floating-logo">
+                  <img src="https://softwarenicaragua.com/wp-content/uploads/2025/04/image_2025-04-11_071419058.png" alt="Software Nicaragua Logo" class="logo-round">
+              </div>
+              <p class="hero-question">¿Quieres desarrollar un software o una aplicación?</p>
+              <h1 class="hero-title">Desarrollamos Tu Propio <span class="highlight">Software O Aplicación</span> A Medida En Sólo <span class="highlight">90 Días</span> Y Lo Iniciamos Por Sólo El <span class="highlight">10%</span> Del Presupuesto</h1>
+              <div class="hero-cta">
+                  <i class="fas fa-arrow-down bounce-arrow"></i>
+                  <p class="hero-cta-text">👇 Agenda una consultoría con nuestro equipo de forma gratuita completando el formulario debajo .👇</p>
+                  <i class="fas fa-arrow-down bounce-arrow"></i>
+              </div>
+          </div>
+          <div class="form-card" id="main-form">
+              
+              <!-- Embedded Booking Widget -->
+              <iframe src="https://api.leadconnectorhq.com/widget/booking/nb3OarSjIuiZcsIikqoL" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="nb3OarSjIuiZcsIikqoL_1752676120825" title="Consultoría Gratuita"></iframe>
+          </div>
+      </div>
+  </section>
+
+  <!-- PAIN POINTS SECTION -->
+  <section class="pain-points-section">
+      <div class="container-wide">
+          <div class="pain-points-grid">
+              <div class="pain-points-content">
+                  <h2 class="section-title">¿Has pasado por esto?</h2>
+                  <ul class="pain-points-list">
+                      <li><i class="fas fa-times-circle red-x"></i> Has cotizado tu proyecto de software en otras empresas y no has recibido una buena cotización.</li>
+                      <li><i class="fas fa-times-circle red-x"></i> Buscas algo especializado y solo te ofrecen soluciones genéricas.</li>
+                      <li><i class="fas fa-times-circle red-x"></i> Has tenido malas experiencias con anteriores proveedores de desarrollos.</li>
+                      <li><i class="fas fa-times-circle red-x"></i> Buscas lanzar tu idea de app móvil al mercado y no sabes cómo hacerlo.</li>
+                      <li><i class="fas fa-times-circle red-x"></i> No encuentras empresas de confianza que puedan acompañarte en el desarrollo.</li>
+                  </ul>
+                  <div class="center-btn">
+                      <a href="#main-form" class="btn-secondary">Quiero más información</a>
+                  </div>
+              </div>
+              <div class="pain-points-image">
+                  <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TpOhXBHhfkswr5QJxAS1/media/66e33dbcedfb2f6a01fdf3b1.jpeg" alt="Digital Technology">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- WE CAN HELP SECTION -->
+  <section class="help-section">
+      <div class="container-wide">
+          <h2 class="section-title white-title">¡En <span class="highlight">Software Nicaragua</span> podemos ayudarte a desarrollarlo!</h2>
+          <div class="help-content">
+              <p>Nos encargaremos de conectar tu proyecto con nuestro equipo de expertos especializados en desarrollo a medida, con más de 10 años de experiencia en la creación de soluciones tecnológicas.</p>
+              <p>Ellos te guiarán en el desarrollo de tu software o aplicación personalizada en tan solo 90 días, comenzando con solo el 10% del presupuesto.</p>
+              <p>Si deseas asegurar el éxito y la calidad en tu proyecto, podemos ponerte en contacto hoy mismo con nuestros expertos, sin necesidad de grandes inversiones iniciales.</p>
+          </div>
+          <div class="center-btn">
+              <a href="#main-form" class="btn-secondary">Quiero más información</a>
+          </div>
+      </div>
+  </section>
+
+  <!-- STEPS SECTION -->
+  <section class="steps-section">
+      <div class="container-wide">
+          <h2 class="section-title white-title">Lo hacemos en 3 simples pasos</h2>
+          <div class="steps-grid">
+              <div class="step-card">
+                  <div class="step-number">1</div>
+                  <h3>Completas el formulario</h3>
+                  <p>Completas con tus datos el formulario al comienzo de esta página o haciendo clic en "Quiero más información" para que podamos contactarte.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-number">2</div>
+                  <h3>Nuestros expertos se ponen en contacto</h3>
+                  <p>Nuestros expertos se ponen en contacto para realizar tu cotización a medida dependiendo de tus necesidades.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-number">3</div>
+                  <h3>Inician a desarrollar tu proyecto</h3>
+                  <p>Inician a desarrollar tu proyecto con una inversión baja que te permitirá sentirte en plena confianza y acelerar los tiempos de inicio.</p>
+              </div>
+          </div>
+          <div class="center-btn">
+              <a href="#main-form" class="btn-secondary">Quiero más información</a>
+          </div>
+      </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects-section">
+      <div class="container-wide">
+          <h2 class="section-title white-title">Desarrollamos <span class="highlight">+100 proyectos</span> de software y aplicaciones exitosamente</h2>
+          <div class="projects-grid">
+              <div class="project-card">
+                  <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TpOhXBHhfkswr5QJxAS1/media/66e35cf72af941f707c19828.png" alt="Proyecto 1">
+              </div>
+          </div>
+          <div class="center-btn">
+              <a href="#main-form" class="btn-secondary">Quiero más información</a>
+          </div>
+      </div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section class="trust-section">
+      <div class="container-wide">
+          <h2 class="section-title white-title">¿Por qué confiar en nuestro equipo?</h2>
+          <div class="trust-content">
+              <p>Nuestro equipo de expertos en desarrollo de software y aplicaciones a medida domina la integración en múltiples plataformas y está listo para ayudarte a iniciar tu proyecto con solo una parte del presupuesto.</p>
+              <p>Con +100 proyectos exitosos y una amplia gama de clientes en diversas industrias, como logística, salud, finanzas, etc. Nos enfocamos en desarrollar las mejores soluciones.</p>
+              <p>Todos nuestros desarrollos son entregados 100% a nombre del cliente, con un enfoque llave en mano y soporte gratuito durante un año completo.</p>
+          </div>
+          <div class="center-btn">
+              <a href="#main-form" class="btn-secondary">Quiero más información</a>
+          </div>
+      </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+      <div class="container-wide">
+          <h2 class="section-title white-title">Preguntas frecuentes</h2>
+          <div class="accordion">
+              <div class="accordion-item">
+                  <button class="accordion-header" onclick="toggleAccordion(0)">
+                      <span>¿Cómo funciona la consultoría?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                      <p>Revisaremos tu proyecto, para darte un mapa claro de cómo podemos ayudarte a realizar tu proyecto de software o app en tiempo récord y sin perder la calidad del mismo.</p>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <button class="accordion-header" onclick="toggleAccordion(1)">
+                      <span>¿Qué resultados puedo esperar?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                      <p>Nuestro equipo garantiza la calidad de todos y cada uno de nuestros proyectos, además nuestra metodología de trabajo ágil logra que tu desarrollo se comience lo más rápido posible.</p>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <button class="accordion-header" onclick="toggleAccordion(2)">
+                      <span>¿Qué pasa si espero?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                      <p>Actualmente, nos quedan pocos cupos para la consultoría gratuita. Si esperas seguro te quedas sin cupo. ¡Aprovecha esta semana la sesión de consultoría es gratuita!</p>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <button class="accordion-header" onclick="toggleAccordion(3)">
+                      <span>¿Por qué ustedes?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                      <p>Llevamos +100 desarrollos exitosos, pasando por incontables industrias, trabajar con nosotros es asegurar el éxito de tu proyecto, además de poder iniciarlo muy rápido.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="center-btn">
+              <a href="#main-form" class="btn-secondary">Quiero más información</a>
+          </div>
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+      <div class="container-wide">
+          <p>Software Nicaragua LLC - Todos los derechos reservados</p>
+          <p><a href="#">Políticas de privacidad</a></p>
+      </div>
+  </footer>
+
+  <script>
+      // Software Nicaragua Landing Page Scripts
+      // Accordion functionality
+      let activeAccordion = null;
+
+      function toggleAccordion(index) {
+          const accordionItems = document.querySelectorAll('.accordion-item');
+          const clickedItem = accordionItems[index];
+          const header = clickedItem.querySelector('.accordion-header');
+          const content = clickedItem.querySelector('.accordion-content');
+
+          // Close previously active accordion
+          if (activeAccordion !== null && activeAccordion !== index) {
+              const prevItem = accordionItems[activeAccordion];
+              const prevHeader = prevItem.querySelector('.accordion-header');
+              const prevContent = prevItem.querySelector('.accordion-content');
+              prevHeader.classList.remove('active');
+              prevContent.classList.remove('active');
+          }
+
+          // Toggle current accordion
+          if (activeAccordion === index) {
+              // Close current
+              header.classList.remove('active');
+              content.classList.remove('active');
+              activeAccordion = null;
+          } else {
+              // Open current
+              header.classList.add('active');
+              content.classList.add('active');
+              activeAccordion = index;
+          }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // Load the external booking widget script
+          const script = document.createElement("script");
+          script.src = "https://link.msgsndr.com/js/form_embed.js";
+          script.type = "text/javascript";
+          document.body.appendChild(script);
+
+          // Smooth scrolling for anchor links
+          const anchorLinks = document.querySelectorAll('a[href^="#"]');
+          anchorLinks.forEach(link => {
+              link.addEventListener('click', function(e) {
+                  const targetId = this.getAttribute('href');
+                  const targetElement = document.querySelector(targetId);
+                  if (targetElement) {
+                      e.preventDefault();
+                      targetElement.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start'
+                      });
+                  }
+              });
+          });
+
+          // Add loading animation to buttons
+          const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+          buttons.forEach(button => {
+              button.addEventListener('click', function() {
+                  // Add a subtle animation for CTA buttons
+                  this.style.transform = 'scale(0.98)';
+                  setTimeout(() => {
+                      this.style.transform = '';
+                  }, 150);
+              });
+          });
+
+          // Add intersection observer for fade-in animations
+          const observerOptions = {
+              threshold: 0.1,
+              rootMargin: '0px 0px -50px 0px'
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.style.opacity = '1';
+                      entry.target.style.transform = 'translateY(0)';
+                  }
+              });
+          }, observerOptions);
+
+          // Observe elements for animation
+          const animatedElements = document.querySelectorAll('.step-card, .project-card, .accordion-item');
+          animatedElements.forEach(el => {
+              el.style.opacity = '0';
+              el.style.transform = 'translateY(30px)';
+              el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+              observer.observe(el);
+          });
+      });
+
+      // Add keyboard navigation for accordion
+      document.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+              const target = e.target;
+              if (target.classList.contains('accordion-header')) {
+                  e.preventDefault();
+                  target.click();
+              }
+          }
+      });
+
+      // Add performance optimization for animations
+      function reduceMotionIfNeeded() {
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (prefersReducedMotion) {
+              const style = document.createElement('style');
+              style.textContent = `
+                  *, *::before, *::after {
+                      animation-duration: 0.01ms !important;
+                      animation-iteration-count: 1 !important;
+                      transition-duration: 0.01ms !important;
+                  }
+              `;
+              document.head.appendChild(style);
+          }
+      }
+
+      // Call on page load
+      document.addEventListener('DOMContentLoaded', reduceMotionIfNeeded);
+  </script>
+</body>
+</html>
