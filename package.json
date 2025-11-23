@@ -1,0 +1,13 @@
+{
+  "name": "bf-landing-page",
+  "version": "1.0.0",
+  "description": "Black Friday Landing Page with AI Agent",
+  "main": "index.html",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.3.3",
+    "dotenv": "^16.4.5"
+  }
+}
