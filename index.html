@@ -19,6 +19,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/black-friday.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1410459867391107');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1410459867391107&ev=PageView&noscript=1" /></noscript>
+
+    <!-- Microsoft Clarity Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "rvub98i5sa");
+    </script>
+    
+    <!-- PayPal SDK -->
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAAFYYp46W033lTD9ibNlRkiDxO6VDtoU7fU7Hi42r8Y2diD-rVbxXpoPkrUK3FMrfuHRo3OrQDaD81YOE&components=hosted-buttons&disable-funding=venmo&currency=USD">
+    </script>
 </head>
 
 <body>
@@ -440,14 +470,26 @@
         <div class="payment-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
             <h2 style="color: var(--primary-blue); margin-bottom: 20px;">Asegurar mi cupo Black Friday</h2>
-            <p style="color: var(--gray-dark); margin-bottom: 30px;">Selecciona tu método de pago preferido para reservar tu cupo con $97 (100% reembolsable)</p>
-            <div class="payment-options">
-                <button class="payment-btn primary" onclick="selectPayment('CashApp')">
-                    <i class="fas fa-dollar-sign"></i> Cash App
-                </button>
-                <button class="payment-btn" onclick="selectPayment('Transferencia')">
-                    <i class="fas fa-university"></i> Transferencia Bancaria
-                </button>
+            <p style="color: var(--gray-dark); margin-bottom: 30px;">Realiza tu pago de $97 (100% reembolsable) para confirmar tu cupo</p>
+            
+            <!-- PayPal Button -->
+            <div id="paypal-container-SACSBKNQX5RCW" style="margin: 30px 0;"></div>
+            <script>
+              paypal.HostedButtons({
+                hostedButtonId: "SACSBKNQX5RCW",
+              }).render("#paypal-container-SACSBKNQX5RCW")
+            </script>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                <p style="color: var(--gray-dark); font-size: 0.9rem; margin-bottom: 15px;">¿Prefieres otro método?</p>
+                <div class="payment-options">
+                    <button class="payment-btn" onclick="selectPayment('CashApp')">
+                        <i class="fas fa-dollar-sign"></i> Cash App
+                    </button>
+                    <button class="payment-btn" onclick="selectPayment('Transferencia')">
+                        <i class="fas fa-university"></i> Transferencia Bancaria
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -512,20 +554,31 @@
             document.getElementById('payment-modal').style.display = 'none';
         }
 
-        // Countdown Logic (Floating)
+        // Countdown Logic (Floating) - Persists with localStorage
         function startCountdown() {
-            // Set deadline to 1 hour 47 minutes 32 seconds from now (as requested)
-            let timeInSeconds = (22 * 3600) + (47 * 60) + 32;
-
             const timerEl = document.getElementById('floating-timer');
+            const DEADLINE_KEY = 'bf_countdown_deadline';
+            let deadline = localStorage.getItem(DEADLINE_KEY);
+
+            // If no deadline stored, create one (22 hours from now)
+            if (!deadline) {
+                deadline = Date.now() + (22 * 3600 * 1000);
+                localStorage.setItem(DEADLINE_KEY, deadline);
+            } else {
+                deadline = parseInt(deadline);
+            }
 
             const timer = setInterval(() => {
-                timeInSeconds--;
+                const now = Date.now();
+                const timeInSeconds = Math.floor((deadline - now) / 1000);
 
                 if (timeInSeconds < 0) {
                     clearInterval(timer);
+                    localStorage.removeItem(DEADLINE_KEY);
+                    timerEl.textContent = '00:00:00';
                     return;
                 }
+
                 const h = Math.floor(timeInSeconds / 3600);
                 const m = Math.floor((timeInSeconds % 3600) / 60);
                 const s = timeInSeconds % 60;

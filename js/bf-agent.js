@@ -235,7 +235,22 @@ async function selectPayment(method) {
     await saveLead('pendiente_pago_' + method);
 
     // Handle specific methods
-    if (method === 'CashApp') {
+    if (method === 'PayPal') {
+        // Close modal first
+        paymentModal.style.display = 'none';
+        addMessage(`💳 Redirigiendo a PayPal para procesar tu pago de $97...`, 'agent');
+        
+        // Track conversion in Facebook Pixel - evento de inicio de compra
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {value: 97.00, currency: 'USD'});
+        }
+        
+        // Redirect to PayPal after a short delay
+        setTimeout(() => {
+            // PayPal button redirige automáticamente a la página de gracias configurada en PayPal
+            // El botón de PayPal ya está configurado para redirigir a https://softwarenicaragua.com/gracias/
+        }, 1500);
+    } else if (method === 'CashApp') {
         addMessage(`💵 Envía tu pago de $97 a Cash App: **$softnicaragua**\n\n📸 Envía el comprobante al WhatsApp: +50588241003`, 'agent');
         setTimeout(() => {
             window.open('https://wa.me/50588241003?text=Hola,%20ya%20realicé%20el%20pago%20de%20$97%20por%20Cash%20App', '_blank');
